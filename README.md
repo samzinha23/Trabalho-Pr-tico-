@@ -106,10 +106,8 @@ Além disso, percebi o quanto o Python e o Pandas são ferramentas incríveis pa
 
 # As atividades foram desenvolvidas no Google Colab
 
-
-
-
-```import pandas as pd´´´
+``` Python
+import pandas as pd
 import numpy as np
      
 
