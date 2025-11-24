@@ -26,7 +26,7 @@ Repositório: https://github.com/samzinha23/Trabalho-Pr-tico-.git
 Através dessa atividade o aluno realizará a limpeza de um conjunto de dados,
 tornando-o apto a ser usado em tarefas de mineração/análise de dados.
 
-<h3>Contextualização 📚</h3>
+<h3>Contextualização ✍️</h3>
 
 Como Analista de Dados, você recebeu, em um novo projeto, um conjunto de dados.
 Sua principal tarefa é tratar os dados desse conjunto a fim de que possam ser
@@ -37,7 +37,7 @@ seguir, no roteiro de prática.
 
 <h3>Roteiro de prática 📝</h3>
 
-📚Material necessário para a prática📚
+Material necessário para a prática📚
 
   Interpretador Python ou ambiente de codificação (JupyterLab / Jupyter Notebooks /
    Google Colab);
