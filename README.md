@@ -17,7 +17,7 @@ Semestre Letivo: 5.
 
 Integrante: Samantha Karina Barbosa Torres.
 
-
+<hr>
 
 <h2>Trabalho Prático   💻</h2>
 
@@ -43,7 +43,7 @@ Roteiro de prática 📝
     Editor ou IDE (caso vá utilizar o interpretados python para execução dos scripts
     criados).
 
- 
+ <hr>
 
 - Procedimentos
 
