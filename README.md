@@ -107,3 +107,280 @@ Além disso, percebi o quanto o Python e o Pandas são ferramentas incríveis pa
 # As atividades foram desenvolvidas no Google Colab
 
 
+
+
+import pandas as pd
+import numpy as np
+     
+
+df = pd.read_csv("pico_web.csv", sep=";")
+     
+
+print(" Informações gerais 📌")
+print(df.info())
+
+print("Primeiras linhas")
+print(df.head())
+
+print("Últimas linhas")
+print(df.tail())
+
+     
+
+ Informações gerais 📌
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 32 entries, 0 to 31
+Data columns (total 6 columns):
+ #   Column    Non-Null Count  Dtype  
+---  ------    --------------  -----  
+ 0   ID        32 non-null     int64  
+ 1   Duration  32 non-null     int64  
+ 2   Date      31 non-null     object 
+ 3   Pulse     32 non-null     int64  
+ 4   Maxpulse  32 non-null     int64  
+ 5   Calories  30 non-null     float64
+dtypes: float64(1), int64(4), object(1)
+memory usage: 1.6+ KB
+None
+Primeiras linhas
+   ID  Duration          Date  Pulse  Maxpulse  Calories
+0   0        60  '2020/12/01'    110       130    4091.0
+1   1        60  '2020/12/02'    117       145    4790.0
+2   2        60  '2020/12/03'    103       135    3400.0
+3   3        45  '2020/12/04'    109       175    2824.0
+4   4        45  '2020/12/05'    117       148    4060.0
+Últimas linhas
+    ID  Duration          Date  Pulse  Maxpulse  Calories
+27  27        60  '2020/12/27'     92       118    2410.0
+28  28        60  '2020/12/28'    103       132       NaN
+29  29        60  '2020/12/29'    100       132    2800.0
+30  30        60  '2020/12/30'    102       129    3803.0
+31  31        60  '2020/12/31'     92       115    2430.0
+
+
+df2 = df.copy()
+     
+
+df2["Calories"] = df2["Calories"].fillna(0)
+print(df2)
+     
+
+    ID  Duration          Date  Pulse  Maxpulse  Calories
+0    0        60  '2020/12/01'    110       130    4091.0
+1    1        60  '2020/12/02'    117       145    4790.0
+2    2        60  '2020/12/03'    103       135    3400.0
+3    3        45  '2020/12/04'    109       175    2824.0
+4    4        45  '2020/12/05'    117       148    4060.0
+5    5        60  '2020/12/06'    102       127    3000.0
+6    6        60  '2020/12/07'    110       136    3740.0
+7    7       450  '2020/12/08'    104       134    2533.0
+8    8        30  '2020/12/09'    109       133    1951.0
+9    9        60  '2020/12/10'     98       124    2690.0
+10  10        60  '2020/12/11'    103       147    3293.0
+11  11        60  '2020/12/12'    100       120    2507.0
+12  12        60  '2020/12/12'    100       120    2507.0
+13  13        60  '2020/12/13'    106       128    3453.0
+14  14        60  '2020/12/14'    104       132    3793.0
+15  15        60  '2020/12/15'     98       123    2750.0
+16  16        60  '2020/12/16'     98       120    2152.0
+17  17        60  '2020/12/17'    100       120    3000.0
+18  18        45  '2020/12/18'     90       112       0.0
+19  19        60  '2020/12/19'    103       123    3230.0
+20  20        45  '2020/12/20'     97       125    2430.0
+21  21        60  '2020/12/21'    108       131    3642.0
+22  22        45           NaN    100       119    2820.0
+23  23        60  '2020/12/23'    130       101    3000.0
+24  24        45  '2020/12/24'    105       132    2460.0
+25  25        60  '2020/12/25'    102       126    3345.0
+26  26        60      20201226    100       120    2500.0
+27  27        60  '2020/12/27'     92       118    2410.0
+28  28        60  '2020/12/28'    103       132       0.0
+29  29        60  '2020/12/29'    100       132    2800.0
+30  30        60  '2020/12/30'    102       129    3803.0
+31  31        60  '2020/12/31'     92       115    2430.0
+
+
+df2["Date"] = df2["Date"].fillna("1900/01/01")
+print(df2)
+     
+
+    ID  Duration          Date  Pulse  Maxpulse  Calories
+0    0        60  '2020/12/01'    110       130    4091.0
+1    1        60  '2020/12/02'    117       145    4790.0
+2    2        60  '2020/12/03'    103       135    3400.0
+3    3        45  '2020/12/04'    109       175    2824.0
+4    4        45  '2020/12/05'    117       148    4060.0
+5    5        60  '2020/12/06'    102       127    3000.0
+6    6        60  '2020/12/07'    110       136    3740.0
+7    7       450  '2020/12/08'    104       134    2533.0
+8    8        30  '2020/12/09'    109       133    1951.0
+9    9        60  '2020/12/10'     98       124    2690.0
+10  10        60  '2020/12/11'    103       147    3293.0
+11  11        60  '2020/12/12'    100       120    2507.0
+12  12        60  '2020/12/12'    100       120    2507.0
+13  13        60  '2020/12/13'    106       128    3453.0
+14  14        60  '2020/12/14'    104       132    3793.0
+15  15        60  '2020/12/15'     98       123    2750.0
+16  16        60  '2020/12/16'     98       120    2152.0
+17  17        60  '2020/12/17'    100       120    3000.0
+18  18        45  '2020/12/18'     90       112       0.0
+19  19        60  '2020/12/19'    103       123    3230.0
+20  20        45  '2020/12/20'     97       125    2430.0
+21  21        60  '2020/12/21'    108       131    3642.0
+22  22        45    1900/01/01    100       119    2820.0
+23  23        60  '2020/12/23'    130       101    3000.0
+24  24        45  '2020/12/24'    105       132    2460.0
+25  25        60  '2020/12/25'    102       126    3345.0
+26  26        60      20201226    100       120    2500.0
+27  27        60  '2020/12/27'     92       118    2410.0
+28  28        60  '2020/12/28'    103       132       0.0
+29  29        60  '2020/12/29'    100       132    2800.0
+30  30        60  '2020/12/30'    102       129    3803.0
+31  31        60  '2020/12/31'     92       115    2430.0
+
+
+print("\n Tentativa de conversão (deve gerar erro):")
+try:
+    pd.to_datetime(df2["Date"], format="%Y/%m/%d")
+except Exception as e:
+    print("ERRO GERADO :", e)
+     
+
+ Tentativa de conversão (deve gerar erro):
+ERRO GERADO : time data "'2020/12/01'" doesn't match format "%Y/%m/%d", at position 0. You might want to try:
+    - passing `format` if your strings have a consistent format;
+    - passing `format='ISO8601'` if your strings are all ISO8601 but not necessarily in exactly the same format;
+    - passing `format='mixed'`, and the format will be inferred for each element individually. You might want to use `dayfirst` alongside this.
+
+
+df2["Date"] = df2["Date"].replace("1900/01/01", np.nan)
+print("\nApós remover '1900/01/01':")
+print(df2)
+     
+
+Após remover '1900/01/01':
+    ID  Duration          Date  Pulse  Maxpulse  Calories
+0    0        60  '2020/12/01'    110       130    4091.0
+1    1        60  '2020/12/02'    117       145    4790.0
+2    2        60  '2020/12/03'    103       135    3400.0
+3    3        45  '2020/12/04'    109       175    2824.0
+4    4        45  '2020/12/05'    117       148    4060.0
+5    5        60  '2020/12/06'    102       127    3000.0
+6    6        60  '2020/12/07'    110       136    3740.0
+7    7       450  '2020/12/08'    104       134    2533.0
+8    8        30  '2020/12/09'    109       133    1951.0
+9    9        60  '2020/12/10'     98       124    2690.0
+10  10        60  '2020/12/11'    103       147    3293.0
+11  11        60  '2020/12/12'    100       120    2507.0
+12  12        60  '2020/12/12'    100       120    2507.0
+13  13        60  '2020/12/13'    106       128    3453.0
+14  14        60  '2020/12/14'    104       132    3793.0
+15  15        60  '2020/12/15'     98       123    2750.0
+16  16        60  '2020/12/16'     98       120    2152.0
+17  17        60  '2020/12/17'    100       120    3000.0
+18  18        45  '2020/12/18'     90       112       0.0
+19  19        60  '2020/12/19'    103       123    3230.0
+20  20        45  '2020/12/20'     97       125    2430.0
+21  21        60  '2020/12/21'    108       131    3642.0
+22  22        45           NaN    100       119    2820.0
+23  23        60  '2020/12/23'    130       101    3000.0
+24  24        45  '2020/12/24'    105       132    2460.0
+25  25        60  '2020/12/25'    102       126    3345.0
+26  26        60      20201226    100       120    2500.0
+27  27        60  '2020/12/27'     92       118    2410.0
+28  28        60  '2020/12/28'    103       132       0.0
+29  29        60  '2020/12/29'    100       132    2800.0
+30  30        60  '2020/12/30'    102       129    3803.0
+31  31        60  '2020/12/31'     92       115    2430.0
+
+
+df2["Date"] = df2["Date"].replace("20201226", "2020/12/26")
+     
+
+df2["Date"] = pd.to_datetime(df2["Date"], format="%Y/%m/%d")
+
+print("\nApós conversão completa para datetime:")
+print(df2)
+     
+
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+/tmp/ipython-input-2117971595.py in <cell line: 0>()
+----> 1 df2["Date"] = pd.to_datetime(df2["Date"], format="%Y/%m/%d")
+      2 
+      3 print("\nApós conversão completa para datetime:")
+      4 print(df2)
+
+/usr/local/lib/python3.12/dist-packages/pandas/core/tools/datetimes.py in to_datetime(arg, errors, dayfirst, yearfirst, utc, format, exact, unit, infer_datetime_format, origin, cache)
+   1065             result = arg.map(cache_array)
+   1066         else:
+-> 1067             values = convert_listlike(arg._values, format)
+   1068             result = arg._constructor(values, index=arg.index, name=arg.name)
+   1069     elif isinstance(arg, (ABCDataFrame, abc.MutableMapping)):
+
+/usr/local/lib/python3.12/dist-packages/pandas/core/tools/datetimes.py in _convert_listlike_datetimes(arg, format, name, utc, unit, errors, dayfirst, yearfirst, exact)
+    431     # `format` could be inferred, or user didn't ask for mixed-format parsing.
+    432     if format is not None and format != "mixed":
+--> 433         return _array_strptime_with_fallback(arg, name, utc, format, exact, errors)
+    434 
+    435     result, tz_parsed = objects_to_datetime64(
+
+/usr/local/lib/python3.12/dist-packages/pandas/core/tools/datetimes.py in _array_strptime_with_fallback(arg, name, utc, fmt, exact, errors)
+    465     Call array_strptime, with fallback behavior depending on 'errors'.
+    466     """
+--> 467     result, tz_out = array_strptime(arg, fmt, exact=exact, errors=errors, utc=utc)
+    468     if tz_out is not None:
+    469         unit = np.datetime_data(result.dtype)[0]
+
+strptime.pyx in pandas._libs.tslibs.strptime.array_strptime()
+
+strptime.pyx in pandas._libs.tslibs.strptime.array_strptime()
+
+strptime.pyx in pandas._libs.tslibs.strptime._parse_with_format()
+
+ValueError: time data "'2020/12/01'" doesn't match format "%Y/%m/%d", at position 0. You might want to try:
+    - passing `format` if your strings have a consistent format;
+    - passing `format='ISO8601'` if your strings are all ISO8601 but not necessarily in exactly the same format;
+    - passing `format='mixed'`, and the format will be inferred for each element individually. You might want to use `dayfirst` alongside this.
+
+
+df2 = df2.dropna(subset=["Date"])
+print("DataFrame Final ✨")
+print(df2)
+
+ out    
+
+DataFrame Final ✨
+    ID  Duration          Date  Pulse  Maxpulse  Calories
+0    0        60  '2020/12/01'    110       130    4091.0
+1    1        60  '2020/12/02'    117       145    4790.0
+2    2        60  '2020/12/03'    103       135    3400.0
+3    3        45  '2020/12/04'    109       175    2824.0
+4    4        45  '2020/12/05'    117       148    4060.0
+5    5        60  '2020/12/06'    102       127    3000.0
+6    6        60  '2020/12/07'    110       136    3740.0
+7    7       450  '2020/12/08'    104       134    2533.0
+8    8        30  '2020/12/09'    109       133    1951.0
+9    9        60  '2020/12/10'     98       124    2690.0
+10  10        60  '2020/12/11'    103       147    3293.0
+11  11        60  '2020/12/12'    100       120    2507.0
+12  12        60  '2020/12/12'    100       120    2507.0
+13  13        60  '2020/12/13'    106       128    3453.0
+14  14        60  '2020/12/14'    104       132    3793.0
+15  15        60  '2020/12/15'     98       123    2750.0
+16  16        60  '2020/12/16'     98       120    2152.0
+17  17        60  '2020/12/17'    100       120    3000.0
+18  18        45  '2020/12/18'     90       112       0.0
+19  19        60  '2020/12/19'    103       123    3230.0
+20  20        45  '2020/12/20'     97       125    2430.0
+21  21        60  '2020/12/21'    108       131    3642.0
+23  23        60  '2020/12/23'    130       101    3000.0
+24  24        45  '2020/12/24'    105       132    2460.0
+25  25        60  '2020/12/25'    102       126    3345.0
+26  26        60    2020/12/26    100       120    2500.0
+27  27        60  '2020/12/27'     92       118    2410.0
+28  28        60  '2020/12/28'    103       132       0.0
+29  29        60  '2020/12/29'    100       132    2800.0
+30  30        60  '2020/12/30'    102       129    3803.0
+31  31        60  '2020/12/31'     92       115    2430.0
+
