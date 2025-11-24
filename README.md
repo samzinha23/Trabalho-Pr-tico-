@@ -325,7 +325,7 @@ ValueError                                Traceback (most recent call last)
 
 /usr/local/lib/python3.12/dist-packages/pandas/core/tools/datetimes.py in _array_strptime_with_fallback(arg, name, utc, fmt, exact, errors)
     465     Call array_strptime, with fallback behavior depending on 'errors'.
-    466     """
+    466     """.
 --> 467     result, tz_out = array_strptime(arg, fmt, exact=exact, errors=errors, utc=utc)
     468     if tz_out is not None:
     469         unit = np.datetime_data(result.dtype)[0]
