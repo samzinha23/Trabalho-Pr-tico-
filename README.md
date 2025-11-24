@@ -105,7 +105,7 @@ Além disso, percebi o quanto o Python e o Pandas são ferramentas incríveis pa
 <h2> Codigos🎯 </h2>
 
 # As atividades foram desenvolvidas no Google Colab
- <img width="629" height="789" alt="Captura de tela 2025-11-24 195111" src="https://github.com/user-attachments/assets/7b696803-6883-437b-8337-b3a93123846d" />
+
 
 
 
