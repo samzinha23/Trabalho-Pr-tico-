@@ -35,9 +35,9 @@ interpretação. Para tal tarefa, você deverá utilizar a linguagem Python e a 
 Pandas. O passo-a-passo de todo o processo de tratamento dos dados é apresentado a
 seguir, no roteiro de prática.
 
-Roteiro de prática 📝
+<h3>Roteiro de prática 📝</h3>
 
-- Material necessário para a prática
+📚Material necessário para a prática📚
 
   Interpretador Python ou ambiente de codificação (JupyterLab / Jupyter Notebooks /
    Google Colab);
