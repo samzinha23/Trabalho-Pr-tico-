@@ -106,47 +106,5 @@ Além disso, percebi o quanto o Python e o Pandas são ferramentas incríveis pa
 
 # As atividades foram desenvolvidas no Google Colab
  
-. import pandas as pd
-. import numpy as np
 
-df = pd.read_csv("pico_web.csv", sep=";")
-
-print(" Informações gerais 📌")
-print(df.info())
-
-print("Primeiras linhas")
-print(df.head())
-
-print("Últimas linhas")
-print(df.tail())
-
-
-df2 = df.copy()
-
-df2["Calories"] = df2["Calories"].fillna(0)
-print(df2)
-
-df2["Date"] = df2["Date"].fillna("1900/01/01")
-print(df2)
-
-print("\n Tentativa de conversão (deve gerar erro):")
-try:
-    pd.to_datetime(df2["Date"], format="%Y/%m/%d")
-except Exception as e:
-    print("ERRO GERADO :", e)
-
-df2["Date"] = df2["Date"].replace("1900/01/01", np.nan)
-print("\nApós remover '1900/01/01':")
-print(df2)
-
-df2["Date"] = df2["Date"].replace("20201226", "2020/12/26")
-
-df2["Date"] = pd.to_datetime(df2["Date"], format="%Y/%m/%d")
-
-print("\nApós conversão completa para datetime:")
-print(df2)
-
-df2 = df2.dropna(subset=["Date"])
-print("DataFrame Final ✨")
-print(df2)
 
