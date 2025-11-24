@@ -109,14 +109,14 @@ Além disso, percebi o quanto o Python e o Pandas são ferramentas incríveis pa
 
 
 
-```import pandas as pd´
+```import pandas as pd´´´
 import numpy as np
      
 
 df = pd.read_csv("pico_web.csv", sep=";")
      
 
-`print(" Informações gerais 📌")`
+print(" Informações gerais 📌")
 print(df.info())
 
 print("Primeiras linhas")
