@@ -17,7 +17,7 @@ Semestre Letivo: 5.
 
 Integrante: Samantha Karina Barbosa Torres.
 
-Repositório:
+Repositório: https://github.com/samzinha23/Trabalho-Pr-tico-.git
 
 <hr>
 
@@ -107,7 +107,7 @@ Além disso, percebi o quanto o Python e o Pandas são ferramentas incríveis pa
 <h2> Codigos🎯 </h2>
 
 # As atividades foram desenvolvidas no Google Colab
-
+https://github.com/samzinha23/Trabalho-Pr-tico-.git
 ``` Python
 import pandas as pd
 import numpy as np
