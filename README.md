@@ -105,9 +105,9 @@ Além disso, percebi o quanto o Python e o Pandas são ferramentas incríveis pa
 <h2> Codigos🎯 </h2>
 
 # As atividades foram desenvolvidas no Google Colab
-
-import pandas as pd
-import numpy as np
+ 
+. import pandas as pd
+. import numpy as np
 
 df = pd.read_csv("pico_web.csv", sep=";")
 
