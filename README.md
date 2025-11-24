@@ -93,7 +93,7 @@ Roteiro de prática 📝
     como base para realizar a transformação solicitada;
     Imprima o dataframe e verifique se todas as transformações foram executadas
     conforme solicitado nos passos anteriores.
-
+<hr>
    <h1> ✨Conclusão Geral✨</h1> 
    
 Com esse trabalho, consegui praticar de maneira clara como usar o Python e o Pandas para realizar leitura, análise e manipulação de dados. Seguindo o roteiro de prática, comecei pela leitura do arquivo CSV e, em seguida, explorei as informações do dataset, identificando erros e inconsistências. Foi possível corrigir problemas como datas fora do padrão e valores faltando, o que tornou a base muito mais organizada.
@@ -101,3 +101,8 @@ Com esse trabalho, consegui praticar de maneira clara como usar o Python e o Pan
 Depois de todas as correções, percebi na prática como a preparação dos dados é uma etapa essencial antes de qualquer análise. O trabalho me ajudou a entender melhor todo esse processo e mostrou o quanto o Pandas facilita as transformações necessárias. No final, consegui desenvolver mais confiança para manipular dados, visualizar informações importantes e preparar um conjunto de dados para estudos e análises futuras.
 
 Além disso, percebi o quanto o Python e o Pandas são ferramentas incríveis para trabalhar com dados. Com eles dá para automatizar tarefas repetitivas, lidar com grandes volumes de informações de forma prática e deixar tudo organizado e consistente para análise. Isso facilita muito a exploração dos dados e deixa o processo de análise mais rápido e confiável, sem tanta dor de cabeça.
+<hr>
+
+<h2> Codigos </h2>
+
+# As atividades foram desenvolvidas no Google Colab
